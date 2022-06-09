@@ -22,7 +22,7 @@ The site will be written using the following languages:
 
 The main page will show all of the uploaded pictures in a dynamic flexible grid view (Pinterest-like). Under the picture in a small footer it will show information about the uploaded image, such as who uploaded the photo, when was it uploaded and the title of it.
 
-![Untitled](Webtech%20projekt%20b2d1b9764eb7453697e37484aac0258f/Untitled.png)
+![Untitled](https://i.stack.imgur.com/sLOOW.jpg)
 
 <aside>
 ⤴️ Header
@@ -67,7 +67,7 @@ It will also contain a client-side verification and a server-side verification a
 
 The site will store the password in the database in an encrypted way for security reasons.
 
-![Untitled](Webtech%20projekt%20b2d1b9764eb7453697e37484aac0258f/Untitled%201.png)
+![Untitled](https://www.phptutorial.net/wp-content/uploads/2021/09/php-registration-form.png)
 
 <aside>
 📄 Login page
