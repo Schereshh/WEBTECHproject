@@ -2,13 +2,15 @@
 
     class Basic extends Controller {
         public function __construct(){
-            
+            $this->userModel = $this->model('User');
         }
         
         public function index(){
+            $countries = $this->userModel->getUsers();
+
             $data = [
                 'title' => "Home page",
-                'name'  => 'Seres',
+                'users' => $countries,
             ];
             $this->view('pages/index', $data);
         }
