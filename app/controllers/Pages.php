@@ -1,6 +1,6 @@
 <?php 
 
-    class Basic extends Controller {
+    class Pages extends Controller {
         public function __construct(){
             $this->userModel = $this->model('User');
         }

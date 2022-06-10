@@ -9,7 +9,7 @@
     define('APPROOT', dirname(dirname(__FILE__)));
 
     // URLROOT
-    define('URLROOT', 'localhost/pictureUpload/WEBTECHproject');
+    define('URLROOT', 'http://localhost/pictureUpload/WEBTECHproject');
 
     //Sitename
     define('SITENAME', 'Gallery');

@@ -1,1 +1,1 @@
-About page
+Project description

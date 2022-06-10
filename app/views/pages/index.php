@@ -1,7 +1,7 @@
-<?php 
-
-foreach($data['users'] as $user){
-    echo "Information: " . $user->code . "<br>";
-}
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+    <?php require_once APPROOT . "/views/includes/head.php" ?>
+<body>
+    <?php require_once APPROOT . "/views/layouts/navigation.php" ?>  
+</body>
+</html>
