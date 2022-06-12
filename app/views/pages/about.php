@@ -1,1 +1,9 @@
-Project description
+<!DOCTYPE html>
+<html lang="en">
+    <?php require_once APPROOT . "/views/includes/head.php" ?>
+<body>
+    <?php require_once APPROOT . "/views/layouts/navigation.php" ?>  
+    <h1>Project description
+    </h1>
+</body>
+</html>

@@ -6,16 +6,13 @@
         }
         
         public function index(){
-            $countries = $this->userModel->getUsers();
-
-            $data = [
-                'title' => "Home page",
-                'users' => $countries,
-            ];
-            $this->view('pages/index', $data);
+            $this->view('pages/index');
         }
 
         public function about(){
-            $this->view('pages/about');
+            $data = [
+                'title' => 'about'
+            ];
+            $this->view('pages/about', $data);
         }
     }
