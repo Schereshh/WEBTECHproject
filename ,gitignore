@@ -2,4 +2,4 @@
 .vscode/
 
 ### File uploads ###
-app/views/posts/upload/*
+app/views/posts/upload/
