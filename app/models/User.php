@@ -58,7 +58,29 @@
             $this->db->bind(':email', $email);
 
             //Check if email is already registered
-            if($this->db->rowCount > 0){
+
+            $this->db->execute();
+
+            if($this->db->rowCount() > 0){
+                return true;
+            } else {
+                return false;
+            }
+
+
+        }
+
+        public function findUserByName($username){
+            $this->db->query(
+                'SELECT * FROM users
+                 WHERE username = :username'
+            );
+
+            $this->db->bind(':username', $username);
+
+            $this->db->execute();
+
+            if($this->db->rowCount() > 0){
                 return true;
             } else {
                 return false;

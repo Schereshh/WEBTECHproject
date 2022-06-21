@@ -13,3 +13,9 @@
 
     //Sitename
     define('SITENAME', 'Gallery');
+
+    //Max file size
+    define('MAX_FILE_SIZE', 4194304);
+
+    //File upload destination
+    define('FILE_DESTINATION', APPROOT . '\views\posts\uploads');

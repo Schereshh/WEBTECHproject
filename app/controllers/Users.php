@@ -42,6 +42,7 @@
 
                     if($loggedInUser) {
                         $this->createUserSession($loggedInUser);
+                        header('Location: ' . URLROOT . '/posts/index');
                     } else {
                         $data['passwordError'] = 'Password or username is incorrect. Please try again!';
 
@@ -101,6 +102,10 @@
                     $data['usernameError'] = 'Please enter username!';
                 } elseif (!preg_match($nameValidation, $data['username'])) {
                     $data['usernameError'] = 'Name can only contain letters and numbers!';
+                } else {
+                    if($this->userModel->findUserByName($data['username'])) {
+                        $data['usernameError'] = 'Username is already taken!';
+                    }
                 }
 
                 //Validate email
@@ -120,7 +125,7 @@
                     $data['passwordError'] = 'Please enter password';
                 } elseif(strlen($data['password']) < 8){
                     $data['passwordError'] = 'Password must be at least 8 characters';
-                } elseif(!preg_match($passwordValidation, $data['password'])) {
+                } elseif(preg_match($passwordValidation, $data['password'])) {
                     $data['passwordError'] = 'Password must have at least one numberic value!';
                 }
 
