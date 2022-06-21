@@ -26,7 +26,7 @@
             }
         },
         {
-            "name": "Launch Built-in web server",
+            "name": "Launch BBuilt-in web server",
             "type": "php",
             "request": "launch",
             "runtimeArgs": [
