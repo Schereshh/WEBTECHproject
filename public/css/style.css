@@ -13,7 +13,7 @@ a {
 }
 
 .header {
-    overflow: hidden;
+
     background-color: gray;
     padding: 20px 10px;
 }
@@ -128,6 +128,37 @@ input::placeholder{
 }
 
 .container {
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 500px;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+    
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr); 
+    grid-auto-rows:minmax();
+    gap: var(--gap);
+}
+
+.container > * {
+    overflow: hidden;
+}
+
+.post-container {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: fit-content;
+    padding-bottom: 1rem;
+}
+
+.gallery_item {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-bottom: 1px solid #000;
+}
+
+.containerbackup {
     margin: 0 auto;
     width: 80%;
     padding: 100px 0px;
@@ -232,9 +263,38 @@ h1 {
 
 hr {
     color: lightgrey;
+    
 }
 
 #github-about {
     color: whitesmoke;
     font-weight: lighter;
+}
+
+#file {
+    height: 20%;
+}
+
+.post-item-title {
+    color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin-right: auto;
+}
+
+#upload-date {
+    color: lightgray;
+    font-weight: lighter;
+    font-size: small;
+}
+
+.info-block {
+    display:flex;
+}
+
+.options-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }

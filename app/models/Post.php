@@ -18,15 +18,30 @@
             return $results;
         }
 
+        public function getUsernameById($id) {
+            $this->db->query(
+                'SELECT DISTINCT users.username 
+                 FROM posts JOIN users ON posts.user_id = users.id 
+                 WHERE posts.user_id = :id;'
+            );
+
+            $this->db->bind(':id', $id);
+
+            $username = $this->db->single();
+
+            return $username;
+        }
+
         public function addPost($data) {
             $this->db->query(
-                'INSERT INTO posts (user_id, title, body)
-                 VALUES (:user_id, :title, :body)'
+                'INSERT INTO posts (user_id, title, body, file_name)
+                 VALUES (:user_id, :title, :body, :file_name)'
             );
 
             $this->db->bind(':user_id', $data['user_id']);
             $this->db->bind(':title', $data['title']);
             $this->db->bind(':body', $data['body']);
+            $this->db->bind(':file_name', $data['fileName']);
 
             if($this->db->execute()) {
                 return true;

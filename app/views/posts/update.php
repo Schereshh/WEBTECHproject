@@ -6,7 +6,7 @@
         <?php require APPROOT . '/views/layouts/navigation.php' ?>
     </div>
 
-    <div class="container center">
+    <div class="containerbackup center">
         <h1>
             Update post
         </h1>

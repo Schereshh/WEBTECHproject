@@ -15,7 +15,10 @@
     define('SITENAME', 'Gallery');
 
     //Max file size
-    define('MAX_FILE_SIZE', 4194304);
+    define('MAX_FILE_SIZE', 10485760);
 
     //File upload destination
-    define('FILE_DESTINATION', APPROOT . '\views\posts\uploads');
+    define('FILE_DESTINATION', 'C:\xampp\htdocs\pictureUpload\uploads');
+
+    //File location
+    define('FILE_LOCATION', 'http://localhost/pictureUpload/uploads');

@@ -7,34 +7,52 @@
         <?php require APPROOT . '/views/layouts/navigation.php' ?>
     </div>
     <div class="container">
+
         <?php foreach ($data['posts'] as $post) : ?>
-            <div class="container-item">
-                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) :  ?>
-                    <a href="<?= URLROOT . '/posts/update/' . $post->id ?>" class="btn orange">
-                        Update
-                    </a>
 
-                    <a 
-                    href="<?= URLROOT . '/posts/delete/' . $post->id ?>"
-                    class="btn red"
-                    >
-                        Delete
-                    </a>
-                <?php endif; ?>
-                <h2>
-                    <?= $post->title ?>
-                </h2>
+            <div class="post-container rounded">
 
-                <h3>
-                    <?= 'Created on: ' . date('F j h:m', strtotime($post->created_at)) ?>
-                </h3>
+                <img src="<?= FILE_LOCATION ?>/<?= $post->file_name ?>" class="gallery_item" alt="<?= $post->title ?>">
 
-                <p>
-                    <?= $post->body ?>
-                </p>
+                <div class="info-block">
+                    
+                    <div class="post-item-title">
+
+                        <?= $post->title ?>
+
+                        <div id="upload-date">
+                            <?= $post->created_at ?>
+                        </div>
+
+                        <div id="created_by">
+                            <?= $post->body ?>
+                        </div>
+
+                    </div>
+
+                    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) :  ?>
+
+                        <div class="options-icon">
+                            <a href="<?= URLROOT . '/posts/update/' . $post->id ?>" class="btn orange">
+                                <i class="fas fa-edit"></i>
+                            </a>
+
+                            <a href="<?= URLROOT . '/posts/delete/' . $post->id ?>" class="btn red">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+
+                    <?php endif; ?>
+                </div>
+
             </div>
+
         <?php endforeach; ?>
+
     </div>
+
+    <?php require APPROOT . "/views/includes/MDB.php" ?>
+
 </body>
 
 </html>

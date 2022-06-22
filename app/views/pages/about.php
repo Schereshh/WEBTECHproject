@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require_once APPROOT . "/views/includes/head.php" ?>
+<?php require_once APPROOT . "/views/includes/head.php" ?>
+
 <body>
-    <?php require_once APPROOT . "/views/layouts/navigation.php" ?>  
+    <?php require_once APPROOT . "/views/layouts/navigation.php" ?>
 
 
     <div class="container-about">
@@ -19,7 +20,15 @@
                 If you want to check out the project and see a more detailed documentation, check out the GitHub repo!
             </p>
 
+            <a class="btn btn-primary" style="background-color: #707070;" href="https://github.com/Schereshh/WEBTECHproject" target="_blank" role="button">
+                <i class="fab fa-github"></i>
+            </a>
+
         </div>
     </div>
+
+    <?php require APPROOT . "/views/includes/MDB.php" ?>
+
 </body>
+
 </html>

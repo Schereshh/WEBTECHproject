@@ -12,6 +12,13 @@
                 'posts' => $posts
             ];
 
+            foreach($data['posts'] as $post){
+
+                $username = $this->postModel->getUsernameById($post->user_id);
+                $post->body = $username->username;
+
+            }
+
             $this->view('posts/index', $data);
         }
 
@@ -25,6 +32,7 @@
                 'titleError' => '',
                 'bodyError' => '', 
                 'fileError' => '',
+                'fileName' => '',
             ];
 
             if($_SERVER['REQUEST_METHOD'] == 'POST') { 
@@ -36,6 +44,7 @@
                     'titleError' => '',
                     'bodyError' => '',
                     'fileError' => '',
+                    'fileName' => '',
                 ];
 
                 //File processing
@@ -51,12 +60,13 @@
                         // Checking if file exceeds MAX_FILE_SIZE
                         $file_size = $_FILES['file']['size'];
                         if($file_size >= MAX_FILE_SIZE) {
-                            $data['fileError'] = 'File is too big (max 4MB)';
+                            $data['fileError'] = 'File is too big (max 10MB)';
                         } else {
                             // Giving file a unique id
                             $file_ext = explode('.', $_FILES['file']['name']);
                             $file_ext = strtolower(end($file_ext));
                             $file_id = uniqid('', true) . '.' . $file_ext;
+                            $data['fileName'] = $file_id;
                             $file_destination = FILE_DESTINATION . '/' . $file_id;
                             if(!move_uploaded_file($_FILES['file']['tmp_name'], $file_destination)){
                                 die("Something went wrong!"); 
@@ -79,7 +89,7 @@
 
                 if(empty($data['titleError']) && empty($data['bodyError']) && empty($data['fileError'])) {
                     if($this->postModel->addPost($data)) {
-                        header('Location: ' . URLROOT . '/posts');
+                        header('Location: ' . URLROOT . '/posts/index');
                     } else {
                         die('Something went wrong, please try again!');
                     }
@@ -95,9 +105,9 @@
             $post = $this->postModel->findPostById($id);
 
             if(!isLoggedIn()) {
-                header('Location: ' . URLROOT . '/posts');
+                header('Location: ' . URLROOT . '/posts/index');
             } elseif($post->user_id != $_SESSION['user_id']) {
-                header('Location: ' . URLROOT . '/posts');
+                header('Location: ' . URLROOT . '/posts/index');
             }
 
             $data = [
@@ -140,7 +150,7 @@
 
                 if(empty($data['titleError']) && empty($data['bodyError'])) {
                     if($this->postModel->updatePost($data)) {
-                        header('Location: ' . URLROOT . '/posts');
+                        header('Location: ' . URLROOT . '/posts/index');
                     } else {
                         die('Something went wrong, please try again!');
                     }
@@ -156,9 +166,9 @@
             $post = $this->postModel->findPostById($id);
 
             if(!isLoggedIn()) {
-                header('Location: ' . URLROOT . '/posts');
+                header('Location: ' . URLROOT . '/posts/index');
             } elseif($post->user_id != $_SESSION['user_id']) {
-                header('Location: ' . URLROOT . '/posts');
+                header('Location: ' . URLROOT . '/posts/index');
             }
 
             $data = [
@@ -170,7 +180,7 @@
             ];
 
             if ($this->postModel->deletePost($id)) {
-                header('Location: ' . URLROOT . '/posts');
+                header('Location: ' . URLROOT . '/posts/index');
             } else {
                 die('Something went wrong!');
             }
