@@ -81,9 +81,9 @@
                     $data['titleError'] = 'The title of a post cannot be empty';
                 }
 
-                if(empty($data['body'])) {
-                    $data['bodyError'] = 'The body of a post cannot be empty';
-                }
+                // if(empty($data['body'])) {
+                //     $data['bodyError'] = 'The body of a post cannot be empty';
+                // }
 
                 
 
