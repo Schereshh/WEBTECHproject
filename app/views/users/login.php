@@ -21,7 +21,7 @@
                     <?= $data['passwordError'] ?>
                 </span>
 
-                <button type="submit" id="submit" value="submit">Submit</button>
+                <button type="submit"  value="submit" class="btn col-6 mx-auto btn-success">Log in</button>
 
                 <p class="options">
                     Not registered yet? 
@@ -30,5 +30,7 @@
             </form>
         </div>
     </div>
+
+    <?php require_once APPROOT . "/views/includes/MDB.php" ?>
 </body>
 </html>

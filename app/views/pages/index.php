@@ -1,3 +1,5 @@
+<?php header('Location: ' . URLROOT . '/posts/index'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <?php require_once APPROOT . "/views/includes/head.php" ?>

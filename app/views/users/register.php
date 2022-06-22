@@ -8,7 +8,7 @@
     <div class="conatiner-login">
         <div class="wrapper-login">
             <h2>
-                Register
+                Sign up
             </h2>
             <form action="<?= URLROOT ?>/users/register" method="POST">
                 <input type="text" placeholder="Username *" name="username">
@@ -31,14 +31,11 @@
                     <?= $data['confirmPasswordError'] ?>
                 </span>
 
-                <button type="submit" id="submit" value="submit">Submit</button>
-
-                <p class="options">
-                    Not registered yet? 
-                    <a href="<?= URLROOT ?>/users/register">Create an account!</a>
-                </p>
+                <button type="submit"  value="submit" class="btn btn-primary btn-lg mx-auto col-6">Log in</button>
             </form>
         </div>
     </div>
+
+    <?php require_once APPROOT . "/views/includes/MDB.php" ?>
 </body>
 </html>

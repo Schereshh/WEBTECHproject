@@ -7,12 +7,6 @@
         <?php require APPROOT . '/views/layouts/navigation.php' ?>
     </div>
     <div class="container">
-        <?php if (isLoggedIn()) : ?>
-            <a href="<?= URLROOT ?>/posts/create" class="btn green">
-                Create
-            </a>
-        <?php endif; ?>
-
         <?php foreach ($data['posts'] as $post) : ?>
             <div class="container-item">
                 <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) :  ?>

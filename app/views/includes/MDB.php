@@ -1,0 +1,1 @@
+<script type="text/javascript" src="<?= URLROOT ?>/public/js/MDB/mdb.min.js"></script>
