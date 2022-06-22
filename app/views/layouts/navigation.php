@@ -1,16 +1,4 @@
-<!-- <div class="header">
-    <a href="<?= URLROOT ?>/pages/index" class="logo">Gallery</a>
-    <div class="header-right">
-        <a href="<?= URLROOT ?>/pages/index">Home</a>
-        <a href="<?= URLROOT ?>/pages/about">About</a>
-        <a href="<?= URLROOT ?>/posts/index">Blog</a>
-        <?php if (isset($_SESSION['username'])) : ?>
-            <a href="<?= URLROOT ?>/users/logout">Log out</a>
-        <?php else : ?>
-            <a href="<?= URLROOT ?>/users/login">Login</a>
-        <?php endif; ?>
-    </div>
-</div> -->
+<script src="<?= URLROOT ?>/public/js/searchBar.js"></script>
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
@@ -72,7 +60,7 @@
 
                 <!-- Search -->
                 <form class="w-auto">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search">
+                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" onkeyup="searchBar()" id="search">
                 </form>
 
             <?php endif; ?>

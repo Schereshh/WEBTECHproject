@@ -136,17 +136,17 @@
                     $data['titleError'] = 'The title of a post cannot be empty';
                 }
 
-                if(empty($data['body'])){
-                    $data['bodyError'] = 'The body of a post cannot be empty';
-                }
+                // if(empty($data['body'])){
+                //     $data['bodyError'] = 'The body of a post cannot be empty';
+                // }
 
                 if($data['title'] == $this->postModel->findPostById($id)->title) {
                     $data['titleError'] = 'At least change the title!';
                 }
 
-                if($data['body'] == $this->postModel->findPostById($id)->body) {
-                    $data['bodyError'] = 'At least change the body!';
-                }
+                // if($data['body'] == $this->postModel->findPostById($id)->body) {
+                //     $data['bodyError'] = 'At least change the body!';
+                // }
 
                 if(empty($data['titleError']) && empty($data['bodyError'])) {
                     if($this->postModel->updatePost($data)) {

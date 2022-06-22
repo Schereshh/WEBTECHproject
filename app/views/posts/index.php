@@ -18,7 +18,10 @@
                     
                     <div class="post-item-title">
 
-                        <?= $post->title ?>
+                        <div class="title">
+                            <?= $post->title ?>
+                        </div>
+                        
 
                         <div id="upload-date">
                             <?= $post->created_at ?>

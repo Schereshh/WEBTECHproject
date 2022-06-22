@@ -17,7 +17,7 @@
                 type="text" 
                 name="title" 
                 value="<?= $data['post']->title ?>">
-
+                <br>
                 <span class="invalidFeedback">
                     <?= $data['titleError'] ?>
                 </span>
@@ -32,7 +32,7 @@
                 </span>
             </div>
 
-            <button class="btn green" name="submit" type="submit">Submit</button>
+            <button class="btn btn-success" name="submit" type="submit">Submit</button>
         </form>
     </div>
 </body>
